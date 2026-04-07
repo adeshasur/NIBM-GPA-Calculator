@@ -160,14 +160,14 @@ body {
     align-items: center;
     justify-content: center;
     width: auto !important;
-    min-width: 140px;
-    margin-top: 10px;
+    min-width: 130px;
+    margin-top: 15px;
     background: transparent !important;
     color: #e11d48 !important;
     border: 1.5px solid #e11d48 !important;
-    font-size: 0.8rem !important;
+    font-size: 0.75rem !important;
     font-weight: 700 !important;
-    padding: 8px 16px !important;
+    padding: 5px 12px !important;
     border-radius: 6px !important;
     transition: all 0.2s ease !important;
     text-transform: uppercase;
