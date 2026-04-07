@@ -87,13 +87,13 @@ body {
     gap: 12px;
 }
 
-.program-selector, .index-input {
+.program-selector, .name-input, .index-input {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.program-selector label, .index-input label {
+.program-selector label, .name-input label, .index-input label {
     font-size: 0.75rem;
     font-weight: 700;
     color: var(--text-muted);
@@ -104,7 +104,7 @@ body {
     position: relative;
 }
 
-.program-selector select, .index-input input {
+.program-selector select, .name-input input, .index-input input {
     width: 100%;
     background: #f1f5f9;
     border: 1px solid var(--border-color);
