@@ -157,17 +157,17 @@ body {
 .download-btn-split {
     align-self: center;
     display: flex;
-    width: 220px !important;
-    height: 38px !important;
+    width: 260px !important;
+    height: 40px !important;
     margin-top: 15px;
-    background: #e11d48 !important;
+    background: var(--primary) !important;
     border: none !important;
     border-radius: 6px !important;
     overflow: hidden;
     cursor: pointer;
     transition: all 0.2s ease;
     padding: 0 !important;
-    box-shadow: 0 4px 10px rgba(225, 29, 72, 0.15);
+    box-shadow: 0 4px 10px rgba(0, 64, 128, 0.15);
 }
 
 .download-btn-split .icon-box {
@@ -187,16 +187,16 @@ body {
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1rem;
+    font-size: 0.85rem;
     font-weight: 800;
     font-style: italic;
-    padding-right: 10px;
+    padding-right: 5px;
 }
 
 .download-btn-split:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(225, 29, 72, 0.25);
-    background: #be123c !important;
+    box-shadow: 0 6px 15px rgba(0, 64, 128, 0.25);
+    background: #003366 !important;
 }
 
 .download-btn-split:active {
