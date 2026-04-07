@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="nibm.png">
 </head>
 <body>
-    <div class="container">
+    <div class="container no-print">
         <div class="left-box">
             <div class="logo-container">
                 <img src="nibm.png" alt="NIBM Logo">
@@ -19,14 +19,21 @@
                 <p>Software Engineering</p>
             </div>
 
-            <div class="program-selector">
-                <label for="program">Academic Program</label>
-                <div class="select-wrapper">
-                    <select id="program">
-                        <option value="diploma">Diploma in SE (Year 1)</option>
-                        <option value="hnd">HND in SE (Year 1 & 2)</option>
-                        <option value="degree">BSc (Hons) SE (4 Years)</option>
-                    </select>
+            <div class="sidebar-form">
+                <div class="program-selector">
+                    <label for="program">Academic Program</label>
+                    <div class="select-wrapper">
+                        <select id="program">
+                            <option value="diploma">Diploma in SE (Year 1)</option>
+                            <option value="hnd">HND in SE (Year 1 & 2)</option>
+                            <option value="degree">BSc (Hons) SE (4 Years)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="index-input">
+                    <label for="index-no">Student Index</label>
+                    <input type="text" id="index-no" placeholder="e.g., COHNDSE0123" maxlength="20">
                 </div>
             </div>
 
@@ -35,6 +42,10 @@
                 <span class="gpa" id="display-gpa">0.00</span>
                 <div id="result-text">Enter your results</div>
             </div>
+
+            <button type="button" class="btn btn-primary download-btn" id="download-report-btn">
+                Download Result PDF
+            </button>
         </div>
 
         <div class="content">
@@ -59,6 +70,58 @@
             </div>
         </div>
     </div>
+
+    <!-- Hidden Report Template for Printing -->
+    <div id="report-template" class="print-only">
+        <header>
+            <img src="nibm.png" class="report-logo" alt="NIBM Logo">
+            <div class="report-header-text">
+                <h1>Academic Transcript Summary</h1>
+                <p>NIBM National Institute of Business Management</p>
+            </div>
+        </header>
+
+        <section class="student-info">
+            <div class="info-row">
+                <span class="label">Student Index:</span>
+                <span class="value" id="report-index">Not Provided</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Pathway:</span>
+                <span class="value" id="report-pathway">Software Engineering</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Date Generated:</span>
+                <span class="value" id="report-date">2024-04-07</span>
+            </div>
+        </section>
+
+        <table class="report-table">
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Module Name</th>
+                    <th>GPA</th>
+                </tr>
+            </thead>
+            <tbody id="report-table-body">
+                <!-- Filled via JS -->
+            </tbody>
+        </table>
+
+        <div class="report-summary">
+            <div class="final-gpa-box">
+                <span class="final-label">Cumulative GPA</span>
+                <span class="final-value" id="report-final-gpa">0.00</span>
+            </div>
+            <div class="performance-badge" id="report-badge">Enter Results</div>
+        </div>
+
+        <footer>
+            <p>This is a computer-generated summary of academic results from NIBM GPA Master.</p>
+        </section>
+    </div>
+
     <script src="calculator.js"></script>
 </body>
 </html>

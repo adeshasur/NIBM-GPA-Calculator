@@ -65,6 +65,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const calculateBtn = document.getElementById('calculate-btn');
     const resetBtn = document.getElementById('reset-btn');
     const pageTitle = document.getElementById('page-title');
+    const indexInput = document.getElementById('index-no');
+    const downloadBtn = document.getElementById('download-report-btn');
+    const reportIndex = document.getElementById('report-index');
+    const reportPathway = document.getElementById('report-pathway');
+    const reportDate = document.getElementById('report-date');
+    const reportTableBody = document.getElementById('report-table-body');
+    const reportFinalGpa = document.getElementById('report-final-gpa');
+    const reportBadge = document.getElementById('report-badge');
 
     // --- Functions ---
 
@@ -166,6 +174,53 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    function generateReport() {
+        // 1. Update Header Info
+        reportIndex.textContent = indexInput.value || "Not Provided";
+        
+        const programNames = {
+            'diploma': 'Diploma in Software Engineering (Year 1)',
+            'hnd': 'Higher National Diploma in Software Engineering (Year 1 & 2)',
+            'degree': 'BSc (Hons) Computer Science (4-Year Pathway)'
+        };
+        reportPathway.textContent = programNames[currentProgram];
+        reportDate.textContent = new Date().toLocaleDateString();
+
+        // 2. Populate Table
+        reportTableBody.innerHTML = '';
+        
+        let yearsToShow = [1];
+        if (currentProgram === 'hnd') yearsToShow = [1, 2];
+        if (currentProgram === 'degree') yearsToShow = [1, 2, 3, 4];
+
+        yearsToShow.forEach(yr => {
+            const modules = moduleData[yr];
+            modules.forEach(mod => {
+                const val = parseFloat(gpaState[yr][mod.id]);
+                if (!isNaN(val)) {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>Year ${yr}</td>
+                        <td>${mod.name}</td>
+                        <td style="font-weight:bold">${val.toFixed(2)}</td>
+                    `;
+                    reportTableBody.appendChild(row);
+                }
+            });
+        });
+
+        // 3. Update Summary
+        const finalGPA = displayGpa.textContent;
+        reportFinalGpa.textContent = finalGPA;
+        
+        // Copy badge style/text
+        reportBadge.textContent = resultText.textContent;
+        reportBadge.style.background = resultText.style.background;
+
+        // 4. Print
+        window.print();
+    }
+
     function setupEventListeners() {
         programSelect.addEventListener('change', (e) => {
             currentProgram = e.target.value;
@@ -198,11 +253,14 @@ document.addEventListener('DOMContentLoaded', function() {
         resetBtn.addEventListener('click', () => {
             if (confirm("Are you sure you want to reset everything?")) {
                 gpaState = { 1: {}, 2: {}, 3: {}, 4: {} };
+                indexInput.value = '';
                 displayGpa.textContent = "0.00";
                 updateBadge(0);
                 renderInputs();
             }
         });
+
+        downloadBtn.addEventListener('click', generateReport);
     }
 
     init();
