@@ -13,10 +13,12 @@ NIBM GPA Master is a professional-grade cumulative GPA calculator designed for N
 ## Screenshots
 
 ### Application Interface
-![Main UI](screenshots/ui_preview.png)
+
+![Dashboard Preview](img/dashboard.png)
 
 ### Academic Transcript Summary (PDF Report)
-![Result Sheet](screenshots/result_sheet.png)
+
+![Result Sheet](img/results.png)
 
 ## Usage
 
