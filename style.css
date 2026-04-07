@@ -74,7 +74,7 @@ body {
 }
 
 .subtitle h3 {
-    font-size: 1rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: var(--text-muted);
     text-transform: uppercase;
@@ -139,7 +139,7 @@ body {
 }
 
 .gpa-display-card .gpa {
-    font-size: 3rem;
+    font-size: 2.4rem;
     font-weight: 800;
     line-height: 1;
 }
@@ -184,7 +184,7 @@ body {
 }
 
 .form-title {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     font-weight: 700;
     color: var(--primary);
 }
@@ -203,7 +203,7 @@ body {
     color: var(--text-muted);
     cursor: pointer;
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     transition: all 0.2s ease;
 }
 
@@ -241,7 +241,7 @@ body {
     padding: 4px 0;
     border: none;
     border-bottom: 2px solid var(--primary-light);
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 700;
     color: var(--primary);
     outline: none;
@@ -261,7 +261,7 @@ body {
     padding: 12px;
     border-radius: 10px;
     border: none;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.2s ease;
