@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NIBM GPA Master | 4-Year Software Engineering Pathway</title>
+    <title>NIBM GPA Master | Academic Pathway</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="nibm.png">
 </head>
 <body>
     <div class="container">
         <div class="left-box">
-            <h1>NIBM</h1>
+            <div class="logo-container">
+                <img src="nibm.png" alt="NIBM Logo">
+            </div>
+            
             <div class="subtitle">
-                <h3>System Upgrade</h3>
-                <h4>Software Engineering Pathway</h4>
+                <h3>GPA Master</h3>
+                <p>Software Engineering</p>
             </div>
 
             <div class="program-selector">
-                <label for="program">Select Program</label>
+                <label for="program">Academic Program</label>
                 <div class="select-wrapper">
                     <select id="program">
                         <option value="diploma">Diploma in SE (Year 1)</option>
@@ -28,9 +31,9 @@
             </div>
 
             <div class="gpa-display-card">
-                <h2>Current GPA</h2>
+                <h2>Program GPA</h2>
                 <span class="gpa" id="display-gpa">0.00</span>
-                <div id="result-text">Enter your grades</div>
+                <div id="result-text">Enter your results</div>
             </div>
         </div>
 
@@ -47,11 +50,11 @@
             </div>
 
             <div class="inputs-container" id="inputs-container">
-                <!-- Modules will be injected here by JavaScript -->
+                <!-- Modules injected via JS -->
             </div>
 
             <div class="actions">
-                <button type="button" class="btn btn-secondary" id="reset-btn">Reset All</button>
+                <button type="button" class="btn btn-secondary" id="reset-btn">Reset</button>
                 <button type="button" class="btn btn-primary" id="calculate-btn">Calculate GPA</button>
             </div>
         </div>
