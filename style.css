@@ -159,15 +159,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: auto !important;
-    min-width: 130px;
+    width: 210px !important;
     margin-top: 15px;
     background: transparent !important;
     color: #e11d48 !important;
     border: 1.5px solid #e11d48 !important;
     font-size: 0.75rem !important;
     font-weight: 700 !important;
-    padding: 5px 12px !important;
+    padding: 3px 12px !important;
     border-radius: 6px !important;
     transition: all 0.2s ease !important;
     text-transform: uppercase;
