@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const pageTitle = document.getElementById('page-title');
     const indexInput = document.getElementById('index-no');
     const downloadBtn = document.getElementById('download-report-btn');
+    const reportName = document.getElementById('report-name');
     const reportIndex = document.getElementById('report-index');
     const reportPathway = document.getElementById('report-pathway');
     const reportDate = document.getElementById('report-date');
@@ -176,6 +177,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function generateReport() {
         // 1. Update Header Info
+        const studentNameInput = document.getElementById('student-name');
+        reportName.textContent = studentNameInput.value || "Not Provided";
         reportIndex.textContent = indexInput.value || "Not Provided";
         
         const programNames = {

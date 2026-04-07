@@ -31,9 +31,14 @@
                     </div>
                 </div>
 
+                <div class="name-input">
+                    <label for="student-name">Full Name</label>
+                    <input type="text" id="student-name" placeholder="Enter Full Name" maxlength="50">
+                </div>
+
                 <div class="index-input">
                     <label for="index-no">Student Index</label>
-                    <input type="text" id="index-no" placeholder="e.g., COHNDSE0123" maxlength="20">
+                    <input type="text" id="index-no" placeholder="e.g., COHNDSE0213" maxlength="20">
                 </div>
             </div>
 
@@ -85,6 +90,10 @@
         </header>
 
         <section class="student-info">
+            <div class="info-row">
+                <span class="label">Student Name:</span>
+                <span class="value" id="report-name">Not Provided</span>
+            </div>
             <div class="info-row">
                 <span class="label">Student Index:</span>
                 <span class="value" id="report-index">Not Provided</span>

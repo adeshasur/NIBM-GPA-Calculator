@@ -84,7 +84,7 @@ body {
 .sidebar-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
 }
 
 .program-selector, .index-input {
