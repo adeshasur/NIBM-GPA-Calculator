@@ -160,16 +160,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateBadge(gpa) {
         if (gpa === 0) {
-            resultText.textContent = "Enter your grades";
+            resultText.textContent = "Enter your results";
             resultText.style.background = "rgba(255,255,255,0.2)";
         } else if (gpa >= 3.5) {
-            resultText.textContent = "Excellent Performance!";
-            resultText.style.background = "var(--accent)";
+            resultText.innerHTML = `Excellent <span style="font-size:0.75rem; opacity:0.8; font-weight:400">(${gpa.toFixed(2)})</span>`;
+            resultText.style.background = "var(--primary)"; // Using primary for "Excellent" in minimal theme
         } else if (gpa >= 2.5) {
-            resultText.textContent = "Good Progress";
+            resultText.innerHTML = `Good <span style="font-size:0.75rem; opacity:0.8; font-weight:400">(${gpa.toFixed(2)})</span>`;
             resultText.style.background = "var(--primary)";
         } else {
-            resultText.textContent = "Focus Required";
+            resultText.innerHTML = `Focus <span style="font-size:0.75rem; opacity:0.8; font-weight:400">(${gpa.toFixed(2)})</span>`;
             resultText.style.background = "var(--secondary)";
         }
     }
@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
         reportFinalGpa.textContent = finalGPA;
         
         // Copy badge style/text
-        reportBadge.textContent = resultText.textContent;
+        reportBadge.innerHTML = resultText.innerHTML;
         reportBadge.style.background = resultText.style.background;
 
         // 4. Print
