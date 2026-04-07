@@ -120,43 +120,32 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function calculateGPA() {
-        let totalWeightedGPA = 0;
-        let totalYearsCount = 0;
+        let totalPoints = 0;
+        let totalModules = 0;
 
         // Determine which years to include based on program
         let yearsToInclude = [1];
         if (currentProgram === 'hnd') yearsToInclude = [1, 2];
         if (currentProgram === 'degree') yearsToInclude = [1, 2, 3, 4];
 
-        let grandTotalPoints = 0;
-        let grandTotalModules = 0;
-
         yearsToInclude.forEach(yr => {
-            let yearPoints = 0;
-            let yearModules = 0;
-            
             const modules = moduleData[yr];
             modules.forEach(mod => {
                 const val = parseFloat(gpaState[yr][mod.id]);
                 if (!isNaN(val) && val >= 0 && val <= 4) {
-                    yearPoints += val;
-                    yearModules++;
+                    totalPoints += val;
+                    totalModules++;
                 }
             });
-
-            if (yearModules > 0) {
-                grandTotalPoints += (yearPoints / yearModules);
-                grandTotalModules++;
-            }
         });
 
-        if (grandTotalModules === 0) {
+        if (totalModules === 0) {
             displayGpa.textContent = "0.00";
             updateBadge(0);
             return;
         }
 
-        const finalGPA = grandTotalPoints / grandTotalModules;
+        const finalGPA = totalPoints / totalModules;
         displayGpa.textContent = finalGPA.toFixed(2);
         updateBadge(finalGPA);
     }
