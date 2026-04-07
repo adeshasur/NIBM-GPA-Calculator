@@ -3,48 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NIBM GPA Calculator</title>
+    <title>NIBM GPA Master | 4-Year Software Engineering Pathway</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="icon.jpg">
+    <link rel="icon" type="image/png" href="nibm.png">
 </head>
 <body>
     <div class="container">
         <div class="left-box">
             <h1>NIBM</h1>
             <div class="subtitle">
-                <h3>Diploma in Software Engineering</h3>
-                <h4>24.1 F</h4>
+                <h3>System Upgrade</h3>
+                <h4>Software Engineering Pathway</h4>
             </div>
-            <div class="gpa-container">
-                <h2>GPA: <span class="gpa">0.0</span></h2>
+
+            <div class="program-selector">
+                <label for="program">Select Program</label>
+                <div class="select-wrapper">
+                    <select id="program">
+                        <option value="diploma">Diploma in SE (Year 1)</option>
+                        <option value="hnd">HND in SE (Year 1 & 2)</option>
+                        <option value="degree">BSc (Hons) SE (4 Years)</option>
+                    </select>
+                </div>
             </div>
-            <div class="result">
-                <h2 id="result-text">2025</h2>
+
+            <div class="gpa-display-card">
+                <h2>Current GPA</h2>
+                <span class="gpa" id="display-gpa">0.00</span>
+                <div id="result-text">Enter your grades</div>
             </div>
         </div>
+
         <div class="content">
-            <div class="right-box">
-                <h2 class="form-title">Enter Your Module GPAs</h2>
-                <div class="inputs-container">
-                    <input type="number" id="ics" placeholder="Introduction to Computer Science " min="0" max="4" step="0.1">
-                    <input type="number" id="mc" placeholder="Mathematics for Computing " min="0" max="4" step="0.1">
-                    <input type="number" id="apf" placeholder="Algorithms and Programming Fundamentals " min="0" max="4" step="0.1">
-                    <input type="number" id="dl" placeholder="Digital Logic & Computer Organization" min="0" max="4" step="0.1">
-                    <input type="number" id="oop" placeholder="Object Oriented Programming " min="0" max="4" step="0.1">
-                    <input type="number" id="dm" placeholder="Data Management 1" min="0" max="4" step="0.1">
-                    <input type="number" id="cn" placeholder="Computer Networks " min="0" max="4" step="0.1">
-                    <input type="number" id="gui" placeholder="GUI Development " min="0" max="4" step="0.1">
-                    <input type="number" id="se" placeholder="Software Engineering " min="0" max="4" step="0.1">
-                    <input type="number" id="ead" placeholder="Enterprise Application Development 1 " min="0" max="4" step="0.1">
-                    <input type="number" id="os" placeholder="Operating Systems " min="0" max="4" step="0.1">
-                    <input type="number" id="dmw" placeholder="Developing Modern Web " min="0" max="4" step="0.1">
-                    <input type="number" id="ecs" placeholder="Effective Communication Skills 1" min="0" max="4" step="0.1">
-                </div>
-                <button type="button">Calculate GPA</button>
-                <button type="reset" id="reset-btn">Reset All</button>
+            <div class="content-header">
+                <h2 class="form-title" id="page-title">Year 1 Modules</h2>
+            </div>
+            
+            <div class="year-tabs" id="year-tabs">
+                <button class="year-tab active" data-year="1">Year 1</button>
+                <button class="year-tab" data-year="2" style="display:none">Year 2</button>
+                <button class="year-tab" data-year="3" style="display:none">Year 3</button>
+                <button class="year-tab" data-year="4" style="display:none">Year 4</button>
+            </div>
+
+            <div class="inputs-container" id="inputs-container">
+                <!-- Modules will be injected here by JavaScript -->
+            </div>
+
+            <div class="actions">
+                <button type="button" class="btn btn-secondary" id="reset-btn">Reset All</button>
+                <button type="button" class="btn btn-primary" id="calculate-btn">Calculate GPA</button>
             </div>
         </div>
     </div>
     <script src="calculator.js"></script>
 </body>
-</html>
+</html>
