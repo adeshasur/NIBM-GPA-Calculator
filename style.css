@@ -155,14 +155,10 @@ body {
 }
 
 .download-btn {
-    background: white !important;
-    color: var(--primary) !important;
-    border: 2px solid var(--primary) !important;
-    padding: 12px !important;
-}
-
-.download-btn:hover {
-    background: var(--primary-light) !important;
+    margin-top: 10px;
+    font-size: 0.8rem !important;
+    padding: 10px !important;
+    border-radius: 8px !important;
 }
 
 /* Content Area */
