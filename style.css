@@ -155,10 +155,13 @@ body {
 }
 
 .download-btn {
-    margin-top: 10px;
+    align-self: center;
+    width: auto !important;
+    min-width: 180px;
+    margin-top: 5px;
     font-size: 0.8rem !important;
-    padding: 10px !important;
-    border-radius: 8px !important;
+    padding: 8px 15px !important;
+    border-radius: 5px !important;
 }
 
 /* Content Area */
